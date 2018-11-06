@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Muslim Info</string>
+
+    <string name="content_image_film">Foto Masjid</string>
+    <string name="text_judul_film">Nama Masjid</string>
+    <string name="text_desk_film">Alamat</string>
+    <string name="text_rilis_film">Keterangan</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="tv_masjid">Masjid</string>
+    <string name="tv_penceramah">Penceramah</string>
+    <string name="tv_jadwal_penceramah">Khutbah</string>
+    <string name="hello_blank_fragment">ok</string>
+</resources>
