@@ -7,10 +7,75 @@ public class MasjidModel implements Parcelable {
 
     private int id;
     private String nm_masjid;
-    private String gambar;
+    private String kecamatan;
     private String alamat;
+    private String thn_berdiri;
+    private String imam;
     private String lat;
     private String lng;
+    private String gambar;
+
+    public MasjidModel(int id, String nm_masjid, String kecamatan, String alamat, String thn_berdiri, String imam, String lat, String lng, String gambar) {
+        this.id = id;
+        this.nm_masjid = nm_masjid;
+        this.kecamatan = kecamatan;
+        this.alamat = alamat;
+        this.thn_berdiri = thn_berdiri;
+        this.imam = imam;
+        this.lat = lat;
+        this.lng = lng;
+        this.gambar = gambar;
+    }
+
+    protected MasjidModel(Parcel in) {
+        id = in.readInt();
+        nm_masjid = in.readString();
+        kecamatan = in.readString();
+        alamat = in.readString();
+        thn_berdiri = in.readString();
+        imam = in.readString();
+        lat = in.readString();
+        lng = in.readString();
+        gambar = in.readString();
+    }
+
+    public static final Creator<MasjidModel> CREATOR = new Creator<MasjidModel>() {
+        @Override
+        public MasjidModel createFromParcel(Parcel in) {
+            return new MasjidModel(in);
+        }
+
+        @Override
+        public MasjidModel[] newArray(int size) {
+            return new MasjidModel[size];
+        }
+    };
+
+    public String getKecamatan() {
+        return kecamatan;
+    }
+
+    public void setKecamatan(String kecamatan) {
+        this.kecamatan = kecamatan;
+    }
+
+    public String getThn_berdiri() {
+        return thn_berdiri;
+    }
+
+    public void setThn_berdiri(String thn_berdiri) {
+        this.thn_berdiri = thn_berdiri;
+    }
+
+    public String getImam() {
+        return imam;
+    }
+
+    public void setImam(String imam) {
+        this.imam = imam;
+    }
+
+
 
     /*public MasjidModel(JSONObject object) {
 
@@ -34,51 +99,6 @@ public class MasjidModel implements Parcelable {
         }
     }*/
 
-
-    protected MasjidModel(Parcel in) {
-        id = in.readInt();
-        nm_masjid = in.readString();
-        gambar = in.readString();
-        alamat = in.readString();
-        lat = in.readString();
-        lng = in.readString();
-    }
-
-    public MasjidModel(int id, String nm_masjid, String gambar, String alamat, String lat, String lng) {
-        this.id = id;
-        this.nm_masjid = nm_masjid;
-        this.gambar = gambar;
-        this.alamat = alamat;
-        this.lat = lat;
-        this.lng = lng;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
-        dest.writeString(nm_masjid);
-        dest.writeString(gambar);
-        dest.writeString(alamat);
-        dest.writeString(lat);
-        dest.writeString(lng);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<MasjidModel> CREATOR = new Creator<MasjidModel>() {
-        @Override
-        public MasjidModel createFromParcel(Parcel in) {
-            return new MasjidModel(in);
-        }
-
-        @Override
-        public MasjidModel[] newArray(int size) {
-            return new MasjidModel[size];
-        }
-    };
 
     public int getId() {
         return id;
@@ -126,5 +146,23 @@ public class MasjidModel implements Parcelable {
 
     public void setLng(String lng) {
         this.lng = lng;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(nm_masjid);
+        parcel.writeString(kecamatan);
+        parcel.writeString(alamat);
+        parcel.writeString(thn_berdiri);
+        parcel.writeString(imam);
+        parcel.writeString(lat);
+        parcel.writeString(lng);
+        parcel.writeString(gambar);
     }
 }

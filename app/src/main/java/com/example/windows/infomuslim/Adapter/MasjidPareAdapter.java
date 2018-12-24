@@ -16,7 +16,12 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.GenericTransitionOptions;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.Priority;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.Target;
 import com.example.windows.infomuslim.ItemClickSupport;
 import com.example.windows.infomuslim.Model.MasjidModel;
 import com.example.windows.infomuslim.R;
@@ -101,8 +106,20 @@ public class MasjidPareAdapter extends RecyclerView.Adapter<MasjidPareAdapter.Vi
         int lat, lng;
         String gambarFilm = filterList.get(position)
                 .getGambar();
+
+
+        RequestOptions options = new RequestOptions()
+                .centerCrop()
+                .error(R.drawable.mosque_icon_128)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .priority(Priority.HIGH);
+
+        holder.imageFilm.layout(0,0,0,0);
         Glide.with(context)
                 .load("http://muslim-info.xakti.tech/img/masjid/" + gambarFilm)
+                .thumbnail(1f)
+                .transition(GenericTransitionOptions.with(android.R.anim.fade_in))
+                .apply(options)
                 .into(holder.imageFilm);
 
         holder.judulFilm
@@ -119,8 +136,12 @@ public class MasjidPareAdapter extends RecyclerView.Adapter<MasjidPareAdapter.Vi
                 Intent i = new Intent(context, DetailMasjidActivity.class);
                 i.putExtra("_ID", movieItems1.getId());
                 i.putExtra("nm_masjid", movieItems1.getNm_masjid());
-                i.putExtra("gambar", movieItems1.getGambar());
+                i.putExtra("camat", movieItems1.getKecamatan());
+                Log.d(TAG, "kecamatan: " + movieItems1.getKecamatan());
                 i.putExtra("alamat", movieItems1.getAlamat());
+                i.putExtra("thn_berdiri", movieItems1.getThn_berdiri());
+                i.putExtra("imam", movieItems1.getImam());
+                i.putExtra("gambar", movieItems1.getGambar());
                 i.putExtra("lat", movieItems1.getLat());
                 i.putExtra("lng", movieItems1.getLng());
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -195,10 +216,10 @@ public class MasjidPareAdapter extends RecyclerView.Adapter<MasjidPareAdapter.Vi
 
         public ViewHolder(View itemView, MasjidPareAdapter masjidPareAdapter) {
             super(itemView);
-            imageFilm = (ImageView) itemView.findViewById(R.id.iv_gambarFilm);
-            judulFilm = (TextView) itemView.findViewById(R.id.tv_judulFilm);
-            overview = (TextView) itemView.findViewById(R.id.tv_deskFilm);
-            release_date = (TextView) itemView.findViewById(R.id.tv_rilisFilm);
+            imageFilm = (ImageView) itemView.findViewById(R.id.iv_gambarMasjid);
+            judulFilm = (TextView) itemView.findViewById(R.id.tv_nmMasjid);
+            overview = (TextView) itemView.findViewById(R.id.tv_kecamatanMasjid);
+            release_date = (TextView) itemView.findViewById(R.id.tv_alamatMasjid);
             btnDetail = (Button) itemView.findViewById(R.id.btn_detail);
             cardView = (CardView) itemView.findViewById(R.id.card_view_detail);
             btnShare = (Button) itemView.findViewById(R.id.btn_share);

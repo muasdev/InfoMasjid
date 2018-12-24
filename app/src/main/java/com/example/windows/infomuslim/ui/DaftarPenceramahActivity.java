@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
@@ -51,8 +52,8 @@ public class DaftarPenceramahActivity extends AppCompatActivity {
         rvDaftarPenceramah = (RecyclerView) findViewById(R.id.rv_daftar_penceramah);
 
         rvDaftarPenceramah.setHasFixedSize(true);
-        rvDaftarPenceramah.setLayoutManager(new GridLayoutManager(this, 2));
-//        rvDaftarPenceramah.setLayoutManager(new LinearLayoutManager(this));
+//        rvDaftarPenceramah.setLayoutManager(new GridLayoutManager(this, 2));
+        rvDaftarPenceramah.setLayoutManager(new LinearLayoutManager(this));
         daftarPenceramahAdapter = new DaftarPenceramahAdapter();
         daftarPenceramahAdapter.setPenceramahList(getApplicationContext(),dataPenceramahArrayList);
         rvDaftarPenceramah.setAdapter(daftarPenceramahAdapter);
@@ -118,6 +119,13 @@ public class DaftarPenceramahActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        // Respond to the action bar's Up/Home button
+
+
+        if (id == R.id.homeAsUp) {
+            super.onBackPressed();
+            return true;
+        }
         if (id == R.id.action_search) {
             return true;
         }

@@ -3,11 +3,14 @@ package com.example.windows.infomuslim.ui;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -51,6 +54,7 @@ public class DaftarMasjidActivity extends AppCompatActivity {
 
         rvDaftarMasjid.setHasFixedSize(true);
         rvDaftarMasjid.setLayoutManager(new GridLayoutManager(this, 2));
+//        rvDaftarMasjid.setLayoutManager(new LinearLayoutManager(this));
         masjidPareAdapter = new MasjidPareAdapter();
 //        masjidPareAdapter.setmData(masjidModelArrayList);
         masjidPareAdapter.setMasjidList(getApplicationContext(), masjidModelArrayList);
@@ -63,6 +67,7 @@ public class DaftarMasjidActivity extends AppCompatActivity {
     void getData(){
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
         Call<ArrayList<MasjidModel>> call = apiService.getMovies();
+
 
         loading = ProgressDialog.show(this, null, "Please wait...", true, false);
         call.enqueue(new Callback<ArrayList<MasjidModel>>() {

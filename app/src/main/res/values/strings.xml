@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">Muslim Info</string>
+    <string name="app_name">Info Muslim Parepare</string>
 
-    <string name="content_image_film">Foto Masjid</string>
-    <string name="text_judul_film">Nama Masjid</string>
-    <string name="text_desk_film">Alamat</string>
-    <string name="text_rilis_film">Keterangan</string>
+    <string name="content_image_Masjid">Foto Masjid</string>
+    <string name="text_judul_Masjid">Nama Masjid</string>
+    <string name="text_desk_Masjid">Alamat</string>
     <string name="title_activity_maps">Map</string>
 
     <string name="tv_masjid">Masjid</string>
-    <string name="tv_penceramah">Penceramah</string>
-    <string name="tv_jadwal_penceramah">Khutbah</string>
-    <string name="hello_blank_fragment">ok</string>
+    <string name="tv_penceramah">Muballigh</string>
+    <string name="judul_tentang_kami">Tentang Kami</string>
+    <string name="isi_tentang_kami">isinya</string>
+    <string name="kategori_tentang_kami">musliminfo2018</string>
 </resources>

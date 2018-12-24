@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.windows.infomuslim">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -18,17 +20,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/MyAppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.DaftarMasjidActivity" />
+        <activity
+            android:name=".ui.DaftarMasjidActivity"
+            android:label="Daftar masjid"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ui.DetailMasjidActivity"
-            android:parentActivityName=".MainActivity" />
+            android:label="Detail masjid"
+            android:parentActivityName=".ui.DaftarMasjidActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -47,8 +54,17 @@
         <activity
             android:name=".map.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".ui.DaftarPenceramahActivity" />
-        <activity android:name=".ui.SaranActivity"></activity>
+        <activity
+            android:name=".ui.DaftarPenceramahActivity"
+            android:label="Daftar Muballigh"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.SaranActivity" />
+        <activity android:name=".ui.MasjidTerdekatActivity" />
+        <activity
+            android:name=".ui.TentangActivity"
+            android:label="Tentang Kami"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.daftarActivity.DaftarPantiActivity"></activity>
     </application>
 
 </manifest>

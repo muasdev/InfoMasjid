@@ -17,8 +17,8 @@
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="350dp"
-            android:fitsSystemWindows="true"
             android:background="#eeeeee"
+            android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.design.widget.CollapsingToolbarLayout
@@ -31,14 +31,14 @@
 
 
                 <ImageView
-                    android:id="@+id/iv_detailGambarFilm"
+                    android:id="@+id/iv_detailGambarMasjid"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/content_image_film"
+                    android:contentDescription="@string/content_image_Masjid"
                     android:scaleType="fitCenter"
                     app:layout_collapseMode="parallax"
                     app:layout_collapseParallaxMultiplier="0.7"
-                    app:srcCompat="@mipmap/ic_launcher" />
+                    tools:src="@tools:sample/avatars" />
 
                 <!--<android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -68,24 +68,23 @@
                     android:layout_margin="8dp">
 
                     <LinearLayout
-                        android:padding="@dimen/activity_horizontal_margin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="@dimen/activity_horizontal_margin">
 
                         <TextView
                             android:id="@+id/textView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_judul_film"
+                            android:text="@string/text_judul_Masjid"
                             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                         <TextView
-                            android:id="@+id/tv_detailJudulFilm"
+                            android:id="@+id/tv_detailNamaMasjid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_judul_film"
-                            tools:text="captain america" />
+                            tools:text="Masjid Fastabiqul Khairat" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
@@ -95,24 +94,24 @@
                     android:layout_margin="8dp">
 
                     <LinearLayout
-                        android:padding="@dimen/activity_horizontal_margin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="@dimen/activity_horizontal_margin">
 
                         <TextView
                             android:id="@+id/textView3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_desk_film"
+                            android:text="@string/text_desk_Masjid"
                             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                         <TextView
-                            android:id="@+id/tv_detailDeskFilm"
+                            android:id="@+id/tv_detailAlamatMasjid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_desk_film"
-                            tools:text="captain america is a cool movie" />
+                            android:text="@string/text_desk_Masjid"
+                            tools:text="Jl. Jend. Sudirman Parepare" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
@@ -122,24 +121,104 @@
                     android:layout_margin="8dp">
 
                     <LinearLayout
-                        android:padding="@dimen/activity_horizontal_margin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="@dimen/activity_horizontal_margin">
 
                         <TextView
                             android:id="@+id/textView5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_rilis_film"
+                            android:text="kecamatan"
                             android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                         <TextView
-                            android:id="@+id/tv_detailRilisFilm"
+                            android:id="@+id/tv_detailKecamatanMasjid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_rilis_film"
-                            tools:text="Wed, 28 Apr, 17" />
+                            tools:text="bacukiki" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/activity_horizontal_margin">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="imam"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                        <TextView
+                            android:id="@+id/tv_detailImamMasjid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="pak imam" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+               <!-- <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/activity_horizontal_margin">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tahun berdiri"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                        <TextView
+                            android:id="@+id/tv_detailthnberdiriMasjid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2000" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>-->
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/activity_horizontal_margin">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No HP pengurus"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                        <TextView
+                            android:id="@+id/tv_detailnohp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="082300000xx (demo)" />
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -155,116 +234,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
-            app:layout_anchor="@id/app_bar"
             android:theme="@style/MyFloatingButton"
+            app:layout_anchor="@id/app_bar"
             app:layout_anchorGravity="bottom|end"
             app:srcCompat="@drawable/ic_directions_black_24dp" />
 
     </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>
-
-    <!--batas--><!--
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.activity.DetailMasjidActivity">
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/iv_detailGambarFilm"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
-                android:contentDescription="@string/content_image_film"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/ic_launcher" />
-
-            <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/text_judul_film"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_detailGambarFilm" />
-
-            <TextView
-                android:id="@+id/tv_detailJudulFilm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text_judul_film"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                tools:text="captain america" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text_desk_film"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_detailJudulFilm" />
-
-            <TextView
-                android:id="@+id/tv_detailDeskFilm"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text_desk_film"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3"
-                tools:text="captain america is a cool movie" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text_rilis_film"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_detailDeskFilm" />
-
-            <TextView
-                android:id="@+id/tv_detailRilisFilm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text_rilis_film"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
-                tools:text="Wed, 28 Apr, 17" />
-
-            <ImageView
-                android:id="@+id/iv_favorit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_detailGambarFilm" />
-        </android.support.constraint.ConstraintLayout>
-    </ScrollView>-->

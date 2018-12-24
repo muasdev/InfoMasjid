@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view_detail"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:layout_marginBottom="@dimen/activity_top_margin"
-    android:layout_marginLeft="@dimen/activity_top_margin"
-    android:layout_marginRight="@dimen/activity_top_margin"
-    android:layout_marginTop="@dimen/activity_top_margin">
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="@dimen/activity_top_margin"
+    android:layout_marginRight="4dp">
 
 
     <RelativeLayout
@@ -14,14 +14,14 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/iv_gambarFilm"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:src="@mipmap/ic_launcher" />
+            android:id="@+id/iv_gambarMasjid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/mosque_icon_128" />
 
         <TextView
-            android:id="@+id/tv_judulFilm"
+            android:id="@+id/tv_nmMasjid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -30,13 +30,13 @@
             android:ellipsize="end"
             android:maxEms="5"
             android:padding="@dimen/activity_top_margin"
-            android:text="Judul Film"
+            tools:text="Nama"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
             android:textColor="@color/primaryTextColor" />
 
 
         <TextView
-            android:id="@+id/tv_deskFilm"
+            android:id="@+id/tv_kecamatanMasjid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -46,7 +46,7 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/tv_rilisFilm"
+            android:id="@+id/tv_alamatMasjid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -71,9 +71,4 @@
 
     </RelativeLayout>
 
-
-    <!--<Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="ok" />-->
 </android.support.v7.widget.CardView>

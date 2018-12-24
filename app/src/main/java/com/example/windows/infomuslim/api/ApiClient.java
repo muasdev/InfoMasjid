@@ -6,6 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 //    String url = "http://muslim-info.xakti.tech/api/masjid";
 //    String url = "http://muslim-info.xakti.tech/api/penceramah";
+//    http://muslim-info.xakti.tech/api/postingan/
     public static String BASE_URL ="http://muslim-info.xakti.tech/api/";
     private static Retrofit retrofit;
     public static Retrofit getClient(){
