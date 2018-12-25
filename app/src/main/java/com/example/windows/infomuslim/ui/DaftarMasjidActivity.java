@@ -5,6 +5,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -41,13 +43,46 @@ public class DaftarMasjidActivity extends AppCompatActivity {
     private MasjidPareAdapter masjidPareAdapter;
     private ArrayList<MasjidModel> masjidModelArrayList;
 
+    SwipeRefreshLayout swipeLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar_masjid);
         ButterKnife.bind(this);
 
+        // Getting SwipeContainerLayout
+        swipeLayout = findViewById(R.id.swipe_container);
+        // Adding Listener
+        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // To keep animation for 4 seconds
+                new Handler().postDelayed(new Runnable() {
+                    @Override public void run() {
+                        // Stop animation (This will be after 3 seconds)
+                        // Remember to CLEAR OUT old items before appending in the new ones
+                        masjidPareAdapter.clear();
+                        // ...the data has come back, add new items to your masjidPareAdapter...
+                        getData();
+                        // Now we call setRefreshing(false) to signal refresh has finished
+                        swipeLayout.setRefreshing(false);
+
+                    }
+                }, 4000); // Delay in millis
+            }
+        });
+
+        // Scheme colors for animation
+        swipeLayout.setColorSchemeColors(
+                getResources().getColor(android.R.color.holo_blue_bright),
+                getResources().getColor(android.R.color.holo_green_light),
+                getResources().getColor(android.R.color.holo_orange_light),
+                getResources().getColor(android.R.color.holo_red_light)
+        );
+
         getData();
+
         masjidModelArrayList = new ArrayList<>();
 
         rvDaftarMasjid = (RecyclerView) findViewById(R.id.rv_daftar_masjid);
@@ -78,6 +113,8 @@ public class DaftarMasjidActivity extends AppCompatActivity {
                     masjidModelArrayList = response.body();
                     masjidPareAdapter.setMasjidList(getApplicationContext(), masjidModelArrayList);
                     masjidPareAdapter.notifyDataSetChanged();
+
+
                 } else {
                     loading.dismiss();
                     Toast.makeText(getApplicationContext(), "Gagal ambil data", Toast.LENGTH_SHORT).show();

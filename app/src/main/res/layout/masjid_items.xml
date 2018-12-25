@@ -18,6 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
             android:src="@drawable/mosque_icon_128" />
 
         <TextView
@@ -26,13 +28,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:background="@color/colorTextNamaMasjid"
+            android:background="@color/colorPrimary"
             android:ellipsize="end"
             android:maxEms="5"
             android:padding="@dimen/activity_top_margin"
             tools:text="Nama"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-            android:textColor="@color/primaryTextColor" />
+            android:textColor="@color/textActionBar" />
 
 
         <TextView

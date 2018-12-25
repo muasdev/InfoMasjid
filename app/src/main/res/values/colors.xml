@@ -10,4 +10,6 @@
     <!--1A178c00-->
     <color name="colorTextNamaMasjid">#f3f3f5</color>
 
+    <color name="textActionBar">#ffffff</color>
+
 </resources>

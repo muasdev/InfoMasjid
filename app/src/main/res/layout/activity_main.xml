@@ -14,8 +14,7 @@
         <technolifestyle.com.imageslider.FlipperLayout
             android:id="@+id/flipper_layout"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginTop="@dimen/activity_top_margin">
+            android:layout_height="250dp">
 
         </technolifestyle.com.imageslider.FlipperLayout>
 
@@ -41,128 +40,128 @@
             android:clipToPadding="false"
             android:orientation="vertical">
 
-            <LinearLayout
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_masjid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView_masjid"
-                    android:layout_width="0dp"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/mosque_icon_64" />
 
-                        <TextView
-                            android:id="@+id/textViewa"
-                            style="@style/styleTextUtama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableTop="@drawable/mosque_icon_64"
-                            android:text="@string/tv_masjid" />
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView_penceramah"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:clickable="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/textViewa"
+                        style="@style/styleTextUtama"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/activity_horizontal_margin"
+                        android:text="@string/tv_masjid" />
 
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
-                        <TextView
-                            android:id="@+id/textViewb"
-                            style="@style/styleTextUtama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableTop="@drawable/ic_user"
-                            android:text="@string/tv_penceramah" />
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-
-            </LinearLayout>
-
-            <LinearLayout
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_penceramah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_margin="5dp"
+                android:clickable="true">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView_kritikSaran"
-                    android:layout_width="0dp"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/icon_muballigh"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/ic_passenger" />
 
-                        <TextView
-                            android:id="@+id/textViewd"
-                            style="@style/styleTextUtama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableTop="@drawable/ic_panti"
-                            android:text="Panti asuhan" />
 
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
+                    <TextView
+                        android:id="@+id/textViewb"
+                        style="@style/styleTextUtama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/tv_penceramah" />
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardView_tentang"
-                    android:layout_width="0dp"
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_kritikSaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/icon_panti"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/ic_panti" />
 
-                        <TextView
-                            android:id="@+id/textViewe"
-                            style="@style/styleTextUtama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableTop="@drawable/ic_panti"
-                            android:text="Sekolah islam" />
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
+                    <TextView
+                        android:id="@+id/textViewd"
+                        style="@style/styleTextUtama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Panti asuhan" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
-            </LinearLayout>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_tentang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/textViewe"
+                        style="@style/styleTextUtama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@drawable/ic_panti"
+                        android:text="Sekolah islam" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
         </LinearLayout>
+
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

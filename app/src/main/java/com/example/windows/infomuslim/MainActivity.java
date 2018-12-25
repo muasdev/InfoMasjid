@@ -2,6 +2,7 @@ package com.example.windows.infomuslim;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +25,7 @@ import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,12 +63,24 @@ public class MainActivity extends AppCompatActivity {
 
         flipperLayout = findViewById(R.id.flipper_layout);
 //        imageUrls = new ArrayList<String>();
+        cardViewMasjid.setBackgroundResource(R.drawable.bg_gradient);
+        cardViewPenceramah.setBackgroundResource(R.drawable.bg_gradient);
+        cardViewKritikSaran.setBackgroundResource(R.drawable.bg_gradient);
+
+
         getData();
 //        imageUrls = Arrays.asList("http://muslim-info.xakti.tech/img/slide_header/"+ gambar.split(","));
 //        carouselView = (CarouselView) findViewById(R.id.carouselView);
 
     }
 
+    public int getRandomColorCode(){
+
+        Random random = new Random();
+
+        return Color.argb(255, random.nextInt(256), random.nextInt(256),     random.nextInt(256));
+
+    }
 
     void getData() {
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
@@ -88,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 //                        Log.d("tag", "onResponse: " + imageUrls);
                         final String caption = modelDataHeaderArrayList.get(i).getCaption();
                         view.setImageUrl("http://muslim-info.xakti.tech/img/slide_header/" + gambar)
-                                .setImageScaleType(ImageView.ScaleType.CENTER_INSIDE); //You can use any ScaleType
+                                .setImageScaleType(ImageView.ScaleType.FIT_XY); //You can use any ScaleType
 //                                .setDescription(caption);
 //                        textViewCaption.setText(caption);
 //                        flipperLayout.setScrollTimeInSec(10);

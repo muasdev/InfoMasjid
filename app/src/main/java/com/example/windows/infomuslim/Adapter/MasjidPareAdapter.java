@@ -2,6 +2,7 @@ package com.example.windows.infomuslim.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.CardView;
@@ -29,6 +30,7 @@ import com.example.windows.infomuslim.ui.DetailMasjidActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import butterknife.BindView;
 
@@ -128,6 +130,8 @@ public class MasjidPareAdapter extends RecyclerView.Adapter<MasjidPareAdapter.Vi
         holder.overview
                 .setText(filterList.get(position).getAlamat());
 
+
+
         holder.cardView.setOnClickListener(new ItemClickSupport(position, new ItemClickSupport.OnItemClick() {
             @Override
             public void onItemClicked(View view, int position) {
@@ -206,6 +210,8 @@ public class MasjidPareAdapter extends RecyclerView.Adapter<MasjidPareAdapter.Vi
     }
 
 
+
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageFilm;
@@ -239,5 +245,17 @@ public class MasjidPareAdapter extends RecyclerView.Adapter<MasjidPareAdapter.Vi
         notifyDataSetChanged();
         /*ingat tambahkan selalu ini, krn kalau tidak, akan muncul pesan
             Skipped 37 frames! The application may be doing too much work on its main thread.*/
+    }
+
+    // Clean all elements of the recycler
+    public void clear() {
+        filterList.clear();
+        notifyDataSetChanged();
+    }
+
+    // Add a list of items -- change to type used
+    public void addAll(List<MasjidModel> list) {
+        filterList.addAll(list);
+        notifyDataSetChanged();
     }
 }

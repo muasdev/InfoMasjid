@@ -6,6 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="actionBarTheme">@style/AppBaseTheme.Toolbar</item>
+    </style>
+
+    <!--Action bar-->
+    <style name="AppBaseTheme.Toolbar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="android:textColorPrimary">@color/textActionBar</item>
+        <item name="colorControlNormal">@color/textActionBar</item>
     </style>
 
     <style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -17,8 +25,9 @@
         <!--<item name="android:textStyle">bold</item>-->
         <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
         <item name="android:layout_marginTop">10dp</item>
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/textActionBar</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:drawablePadding">10dp</item>
 
