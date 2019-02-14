@@ -2,9 +2,9 @@ package com.example.windows.infomuslim.Adapter;
 
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,7 +24,9 @@ import com.example.windows.infomuslim.R;
 
 import java.util.ArrayList;
 
-import static android.support.constraint.Constraints.TAG;
+import static androidx.constraintlayout.widget.Constraints.TAG;
+
+//import static androidx.constraintlayout.Constraints.TAG;
 
 public class DaftarPantiAdapter extends RecyclerView.Adapter<DaftarPantiAdapter.ViewHolder> implements Filterable {
 

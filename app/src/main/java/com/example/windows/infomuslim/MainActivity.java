@@ -5,12 +5,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.windows.infomuslim.Model.ModelDataHeader;
@@ -20,13 +17,12 @@ import com.example.windows.infomuslim.ui.DaftarMasjidActivity;
 import com.example.windows.infomuslim.ui.DaftarPenceramahActivity;
 import com.example.windows.infomuslim.ui.daftarActivity.DaftarPantiActivity;
 import com.shashank.sony.fancytoastlib.FancyToast;
-import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -48,12 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
     FlipperLayout flipperLayout;
     ProgressDialog loading;
+    @BindView(R.id.cardView_kisah)
+    CardView cardViewKisah;
     private ArrayList<ModelDataHeader> modelDataHeaderArrayList;
 
     String gambar;
-    CarouselView carouselView;
-    List<String> imageUrls;
-    ImageListener imageListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,22 +58,19 @@ public class MainActivity extends AppCompatActivity {
 
         flipperLayout = findViewById(R.id.flipper_layout);
 //        imageUrls = new ArrayList<String>();
-        cardViewMasjid.setBackgroundResource(R.drawable.bg_gradient);
+       /* cardViewMasjid.setBackgroundResource(R.drawable.bg_gradient_terbalik);
         cardViewPenceramah.setBackgroundResource(R.drawable.bg_gradient);
         cardViewKritikSaran.setBackgroundResource(R.drawable.bg_gradient);
-
+        cardViewKisah.setBackgroundResource(R.drawable.bg_gradient_terbalik);*/
 
         getData();
-//        imageUrls = Arrays.asList("http://muslim-info.xakti.tech/img/slide_header/"+ gambar.split(","));
-//        carouselView = (CarouselView) findViewById(R.id.carouselView);
-
     }
 
-    public int getRandomColorCode(){
+    public int getRandomColorCode() {
 
         Random random = new Random();
 
-        return Color.argb(255, random.nextInt(256), random.nextInt(256),     random.nextInt(256));
+        return Color.argb(255, random.nextInt(256), random.nextInt(256), random.nextInt(256));
 
     }
 
@@ -98,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 0; i < modelDataHeaderArrayList.size(); i++) {
                         FlipperView view = new FlipperView(getBaseContext());
                         gambar = modelDataHeaderArrayList.get(i).getGambar();
+//                        final String[] stringArray = modelDataHeaderArrayList.toArray(new String[0]);
+//                        Log.d("tes", "testes " + stringArray.length);
 //                        imageUrls = Arrays.asList("http://muslim-info.xakti.tech/img/slide_header/" + gambar.split(","));
 //                        Log.d("tag", "onResponse: " + imageUrls);
                         final String caption = modelDataHeaderArrayList.get(i).getCaption();
@@ -114,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
                                         , caption + (flipperLayout.getCurrentPagePosition() + 1)
                                         , Toast.LENGTH_SHORT).show();*/
 
-                                FancyToast.makeText(MainActivity.this,caption,
-                                        FancyToast.LENGTH_SHORT,FancyToast.DEFAULT, false).show();
+                                FancyToast.makeText(MainActivity.this, caption,
+                                        FancyToast.LENGTH_SHORT, FancyToast.DEFAULT, false).show();
                             }
                         });
 

@@ -4,10 +4,10 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +31,8 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 
-import static android.support.constraint.Constraints.TAG;
+import static androidx.constraintlayout.widget.Constraints.TAG;
+
 
 public class DaftarPenceramahAdapter extends RecyclerView.Adapter<DaftarPenceramahAdapter.ViewHolder> implements Filterable {
 
